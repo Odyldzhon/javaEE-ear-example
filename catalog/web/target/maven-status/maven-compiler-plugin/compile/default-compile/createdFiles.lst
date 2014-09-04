@@ -1,0 +1,10 @@
+ua\sumy\odyldzhon\catalog\web\converter\AuthorsConverter.class
+ua\sumy\odyldzhon\catalog\web\page\ModifyAuthor.class
+ua\sumy\odyldzhon\catalog\web\converter\DataUrlConverter.class
+ua\sumy\odyldzhon\catalog\web\Secutiry.class
+ua\sumy\odyldzhon\catalog\web\page\ListAuthors.class
+ua\sumy\odyldzhon\catalog\web\page\ModifyBook.class
+ua\sumy\odyldzhon\catalog\web\LoginBean.class
+ua\sumy\odyldzhon\catalog\web\converter\PairConverter.class
+ua\sumy\odyldzhon\catalog\web\converter\DateCoverter.class
+ua\sumy\odyldzhon\catalog\web\page\ListBooks.class

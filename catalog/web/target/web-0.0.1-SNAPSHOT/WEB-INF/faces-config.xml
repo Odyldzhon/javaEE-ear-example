@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+ <navigation-rule>
+  <from-view-id>/*</from-view-id>
+  <navigation-case>
+   <from-outcome>home</from-outcome>
+   <to-view-id>/catalog/index.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>listBooks</from-outcome>
+   <to-view-id>/catalog/list_books.xhtml</to-view-id>
+   <redirect></redirect>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>listAuthors</from-outcome>
+   <to-view-id>/catalog/list_authors.xhtml</to-view-id>
+	   <redirect></redirect>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>addUpdateAuthor</from-outcome>
+   <to-view-id>/catalog/add_update_author.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>addUpdateBook</from-outcome>
+   <to-view-id>/catalog/add_update_book.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <application>
+  <resource-bundle>
+   <base-name>messages</base-name>
+   <var>msgs</var>
+  </resource-bundle>
+  <locale-config>
+   <default-locale>en</default-locale>
+  </locale-config>
+ </application>
+</faces-config>

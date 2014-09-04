@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:insert name="metadata"></ui:insert>
+		
+	<h:head>
+		<h:outputStylesheet library="css" name="core.css"/>
+		<ui:insert name="heading"></ui:insert>
+	</h:head>
+	
+	<h:body>
+		<div id="title">
+			<div id="center">
+				<p><h:outputText value="#{msgs.coreTitle}"/></p>
+			</div>
+		</div>
+		<div id="top">
+			<div id="navPanel">
+				<div id="logout">
+					<h:form>
+						<h:commandButton type="submit"   
+			        		value="#{msgs.logout}" action="#{loginBean.logout}"/>
+					</h:form>
+				</div>
+				<ui:insert name="top"></ui:insert>
+			</div>
+		</div>
+		<div id="content">
+			<ui:insert name="content"/>
+		</div>	
+	</h:body>
+</html>

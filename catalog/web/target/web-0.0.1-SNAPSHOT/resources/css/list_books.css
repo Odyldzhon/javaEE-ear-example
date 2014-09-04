@@ -1,0 +1,47 @@
+#search{
+	margin-bottom:1%;
+}
+#container_top{
+	width:100%;
+}
+#list_books_text{
+	font-size:20px;
+	float:left;
+}
+#list_books_button{
+	font-size:27px;
+	float:right;
+}
+.table{ 
+	width:100%;
+	border-collapse:collapse;
+	border:1px solid #000000;
+	border: 1px solid #999;
+}
+
+.tableHeader{
+	text-align:center;
+	background:none repeat scroll 0 0 #d8d8d8;
+	border-bottom:1px solid #000000;  
+	padding:2px;
+}
+td, th {
+	padding: 4px;
+	border: 1px solid #999;
+	width:20%;
+   }
+.tableOddRow{
+	text-align:center;
+	background:none repeat scroll 0 0 #FFFFFFF;	
+	border: 1px solid #999;
+}
+
+.tableEvenRow{
+	text-align:center;
+	background:none repeat scroll 0 0 #F2F2F2;
+	border: 1px solid #999;
+}
+#act1, #act2{
+	float:left;
+	width:50%;
+}

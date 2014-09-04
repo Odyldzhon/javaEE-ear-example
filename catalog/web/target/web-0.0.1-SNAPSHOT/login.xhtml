@@ -1,0 +1,26 @@
+  <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">   
+      
+<h:head>  
+    <title>login page</title>  
+</h:head>  
+  
+<h:body>  
+	<h:outputText value = "#{flash.message}"/>
+		<h:form>  
+			<h:panelGrid columns="2">  
+		    	<h:outputText value="#{msgs.username}:"/>   
+		     	<h:inputText value="#{loginBean.username}"   
+		          	required="true" requiredMessage="##{msgs.usernameRequired}"/>  
+		 
+		     	<h:outputText value="${msgs.password}: "/>   
+		     	<h:inputSecret value="#{loginBean.password}"   
+		          	required="true" requiredMessage="#{msgs.passwordRequired}"/>  
+			</h:panelGrid>  
+			<h:commandButton type="submit"   
+			                   value="#{msgs.login}" action="#{loginBean.login}"/>   
+      </h:form>   
+</h:body>  
+</html> 

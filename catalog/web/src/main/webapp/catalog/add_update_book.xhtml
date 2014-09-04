@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui"
+	  xmlns:of="http://omnifaces.org/functions">
+
+	<ui:composition template="/catalog/templates/coreLayout.xhtml">
+	
+		<ui:define name="heading">
+           <h:outputStylesheet library="css" name="add_update_books.css"/>
+        </ui:define> 
+        
+		<ui:define name="metadata">
+			<f:metadata>
+		        <f:viewParam name="title" value="#{ModifyBook.oldTitle}"/>
+		        <f:viewParam name="description" value="#{ModifyBook.oldDescription}" />
+		        <f:viewParam name="date" value="#{ModifyBook.oldDate}" converter="DateConverter"/>
+		        <f:viewParam name="authors" value="#{ModifyBook.selectedAuthors}" converter="AuthorsConverter"/>
+		    </f:metadata>
+		</ui:define>
+		
+		<ui:define name="top">
+           <h:link value="#{msgs.linkHome}" outcome="home"/>
+           <h:outputText value=">" />
+           <h:link value="#{msgs.linkListBooks}" outcome="listBooks"/>
+           <h:outputText value=">" />
+           <h:link value="#{msgs.linkAddBook}" outcome="addUpdateBook"/>
+        </ui:define>
+        
+        <ui:define name="content">
+        	<h:outputText value="#{(empty flash.result) ? '': msgs.actionDubBook}" 
+            	style="color:red; margin:8px;"/>
+        	<o:form includeRequestParams="true">
+				<div>
+					<h:outputText value="#{msgs.addButtonTitle}" />
+					<h:commandButton value="#{(empty param.date) ? msgs.buttonCreate : msgs.buttonUpdate}"
+					 action = "#{ModifyBook.addUpdateBook}" />
+				</div>
+				<h:messages style="color:red;margin:8px;"/>
+				<h:panelGrid columns="2" cellspacing="3">
+					<h:outputText value="#{msgs.addBookFieldTitle}"/>
+					<h:inputText value="#{ModifyBook.title}" required="true" requiredMessage = "#{msgs.titleRequired}"/>
+					
+					<h:outputText value="#{msgs.addBookFieldDescription}"/>
+					<h:inputTextarea value="#{ModifyBook.description}" required="true" 
+						requiredMessage = "#{msgs.descriptionRequired}"/>
+					
+					<h:outputText value="#{msgs.addBookFieldDate}"/>
+					<h:inputText value="#{ModifyBook.date}" required="true" 
+						requiredMessage = "#{msgs.dateRequired}"
+						converterMessage="#{msgs.validationDateMessage}">
+						<f:convertDateTime pattern="yyyy"/>
+					</h:inputText>
+					
+					<h:outputText value="#{msgs.addBookFieldAuthors}"/>
+					<h:selectManyListbox value="#{ModifyBook.selectedAuthors}" 
+						required="true" 
+						requiredMessage = "#{msgs.authorsRequired}"
+						converter="PairConverter">
+   						<f:selectItems value="#{ModifyBook.authors}"
+   						var="author" 
+   						itemLabel="#{author.value0} #{author.value1}"
+   						itemValue="#{author}"/>
+   					</h:selectManyListbox>
+				</h:panelGrid>
+			</o:form>
+        </ui:define> 
+	
+	</ui:composition>
+</html>

@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="/catalog/templates/coreLayout.xhtml">
+	
+		<ui:define name="heading">
+           <h:outputStylesheet library="css" name="list_authors.css"/>
+        </ui:define> 
+        
+		<ui:define name="top">
+           <h:link value="#{msgs.linkHome}" outcome="home"/>
+           <h:outputText value=">" />
+           <h:link value="#{msgs.linkListAuthors}" outcome="listAuthors"/>
+        </ui:define> 
+        
+        <ui:define name="content">
+        
+        	<h:outputText value="#{(empty flash.result) ? '': 
+        		(flash.result == 'saved') ? msgs.actionSaveAuthor : msgs.actionUpdateAuthor}" 
+            	style="color:green; margin:8px;"/>
+            	
+        	<div id="container_top">
+	        	<div id="list_authors_text">
+	        		<p><h:outputText value="#{msgs.listAuthorsText}" /></p>
+	        	</div>
+	        	<div id="list_authors_button">
+	        		<h:button value="#{msgs.linkCreateAuthor}" outcome="addUpdateAuthor"
+	        			rendered="#{Security.isUserAllowedAccess()}"/>
+	        	</div>
+        	</div>
+        	
+	        <h:dataTable value="#{ListAuthors.authors}" var="author"
+	            	styleClass="table"
+         			headerClass="tableHeader"
+         			rowClasses="tableOddRow,tableEvenRow">
+	      		<h:column id="name">
+	      			<f:facet name="header">
+	      				<h:outputText value="#{msgs.authorColumnName}" />
+	      			</f:facet>
+	      			#{author.value0}
+	      		</h:column>
+	      		<h:column>
+	      			<f:facet name="header">
+	      				<h:outputText value="#{msgs.authorColumnSurname}" />
+	      			</f:facet>
+	      			#{author.value1}
+	      		</h:column>
+	      		<h:column>
+	      			<f:facet name="header">
+	      				<h:outputText value="#{msgs.authorColumnAction}" />
+	      			</f:facet>
+	      			<div id="act1">
+		      			<h:link outcome="addUpdateAuthor" value="#{msgs.updateAuthor}"
+		      					rendered="#{Security.isUserAllowedAccess()}">
+							<f:param name="name" value="#{author.value0}" />
+							<f:param name="surname" value="#{author.value1}" />
+						</h:link>
+	      			</div>
+	      			<div id="act2">
+		      			<h:form>
+			      			<h:commandLink action="#{ListAuthors.remove(author)}" 
+			      				value="#{msgs.buttonRemove}" rendered="#{Security.isUserAllowedAccess()}"/>
+		      			</h:form>
+	      			</div>
+	      			<div id="act3">
+		      			<h:link outcome="listBooks" value="#{msgs.listBooks}">
+		      				<f:param name="name" value="#{author.value0}" />
+							<f:param name="surname" value="#{author.value1}" />
+		      			</h:link>
+	      			</div>
+	      		</h:column>
+	      	</h:dataTable>
+	      	
+        </ui:define>
+	</ui:composition>
+</html>

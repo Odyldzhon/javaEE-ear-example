@@ -1,0 +1,14 @@
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\entity\Book.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\service\AuthorPersistenceService.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\ModelViewConverter.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\entity\RoleKey.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\entity\Role.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\service\RolePersistenceService.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\service\BookPersistenceService.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\CatalogFacade.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\entity\Author.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\service\PersistenceService.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\service\AbstractPesistenceService.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\service\UserPersistenceService.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\entity\User.java
+D:\Projects\nix\catalog\model\src\main\java\ua\sumy\odyldzhon\catalog\model\datasource\entity\EntityMark.java

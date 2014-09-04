@@ -1,0 +1,14 @@
+ua\sumy\odyldzhon\catalog\model\datasource\entity\User.class
+ua\sumy\odyldzhon\catalog\model\datasource\service\AuthorPersistenceService.class
+ua\sumy\odyldzhon\catalog\model\datasource\service\BookPersistenceService.class
+ua\sumy\odyldzhon\catalog\model\CatalogFacade.class
+ua\sumy\odyldzhon\catalog\model\datasource\service\UserPersistenceService.class
+ua\sumy\odyldzhon\catalog\model\datasource\service\RolePersistenceService.class
+ua\sumy\odyldzhon\catalog\model\datasource\entity\Role.class
+ua\sumy\odyldzhon\catalog\model\datasource\entity\EntityMark.class
+ua\sumy\odyldzhon\catalog\model\datasource\service\PersistenceService.class
+ua\sumy\odyldzhon\catalog\model\ModelViewConverter.class
+ua\sumy\odyldzhon\catalog\model\datasource\entity\Author.class
+ua\sumy\odyldzhon\catalog\model\datasource\entity\RoleKey.class
+ua\sumy\odyldzhon\catalog\model\datasource\entity\Book.class
+ua\sumy\odyldzhon\catalog\model\datasource\service\AbstractPesistenceService.class

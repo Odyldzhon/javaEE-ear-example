@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#*" PATH="/*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:0" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#catalog#index.xhtml" NAME="output"
+    PATH="/catalog/index.xhtml" TARGET="rules:#catalog#index.xhtml"
+    TITLE="home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listBooks::#catalog#list_books.xhtml"
+    NAME="output1" PATH="/catalog/list_books.xhtml"
+    TARGET="rules:#catalog#list_books.xhtml" TITLE="listBooks" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAuthors::#catalog#list_authors.xhtml"
+    NAME="output2" PATH="/catalog/list_authors.xhtml"
+    TARGET="rules:#catalog#list_authors.xhtml" TITLE="listAuthors" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="addUpdateAuthor::#catalog#add_update_author.xhtml"
+    NAME="output3" PATH="/catalog/add_update_author.xhtml"
+    TARGET="rules:#catalog#add_update_author.xhtml"
+    TITLE="addUpdateAuthor" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="addUpdateBook::#catalog#add_update_book.xhtml" NAME="output4"
+    PATH="/catalog/add_update_book.xhtml"
+    TARGET="rules:#catalog#add_update_book.xhtml" TITLE="addUpdateBook" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#catalog#index.xhtml"
+  PATH="/catalog/index.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#catalog#list_books.xhtml"
+  PATH="/catalog/list_books.xhtml" SHAPE="256,177,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#catalog#list_authors.xhtml"
+  PATH="/catalog/list_authors.xhtml" SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#catalog#add_update_author.xhtml"
+  PATH="/catalog/add_update_author.xhtml" SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#catalog#add_update_book.xhtml"
+  PATH="/catalog/add_update_book.xhtml" SHAPE="304,497,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

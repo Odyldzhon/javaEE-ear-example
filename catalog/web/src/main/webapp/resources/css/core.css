@@ -1,0 +1,36 @@
+
+#title{
+	width:100%;
+	height:15%;
+	text-align: center;
+	font-size: 35px;
+	border: 4px solid grey;
+	box-sizing: border-box;
+	display:table;
+}
+#center{
+	display:table-cell;
+	vertical-align:middle;
+}
+
+#top{
+	width:100%;
+	height:10%;
+	font-size:15px;
+	display:table;
+
+}
+#navPanel{
+	display:table-cell;
+	vertical-align:middle;
+}
+#content{
+	width:100%;
+	height:74%;
+}
+#name,#surname{
+	width:30%;
+}
+#logout{
+	float:right;
+}

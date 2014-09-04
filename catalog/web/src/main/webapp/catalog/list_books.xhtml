@@ -1,0 +1,111 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="/catalog/templates/coreLayout.xhtml">
+		<ui:define name="heading">
+           <h:outputStylesheet library="css" name="list_books.css"/>
+        </ui:define> 
+	
+		<ui:define name="metadata">
+			<f:metadata>
+				<f:viewParam name="name" value="#{ListBooks.authorName}"/>
+				<f:viewParam name="surname" value="#{ListBooks.authorSurname}"/>
+				<f:viewParam name="title" value="#{ListBooks.title}"/>
+			</f:metadata>
+        </ui:define>
+		
+        <ui:define name="top">
+           <h:link value="#{msgs.linkHome}" outcome="home"/>
+           <h:outputText value=">" />
+           <h:link value="#{msgs.linkListBooks}" outcome="listBooks"/>
+        </ui:define> 
+        
+        <ui:define name="content">
+        
+        	<h:outputText value="#{(empty flash.result) ? '': 
+        		(flash.result == 'saved') ? msgs.actionSaveBook : msgs.actionUpdateBook}" 
+            	style="color:green; margin:8px;"/>
+            	
+        	<div id="search">
+        		<h:form>
+					<h:outputText value="#{msgs.searchText}"/>
+        			<h:inputText id="searchValue" value = "#{ListBooks.title}"/>   
+        			<h:commandButton value="#{msgs.buttonSearch}">
+        				<f:ajax execute="searchValue" render="result"/> 
+        			</h:commandButton>  		
+        		</h:form>
+        		<h:outputText value="#{(empty ListBooks.authorName) 
+        			? msgs.searchHelpText : msgs.searchHelpTextAuthor}" />
+        	</div>
+        	
+        	<div id="container_top">
+	        	<div id="list_books_text">
+	        		<p><h:outputText value="#{(empty ListBooks.authorName) 
+	        			? msgs.listBooksText : msgs.listBooksAuthorText}" /></p>
+	        	</div>
+	        	<div id="list_books_button">
+	        		<h:button value="#{msgs.linkCreateBook}" outcome="addUpdateBook"
+	        			rendered="#{Security.isUserAllowedAccess()}"/>
+	        	</div>
+        	</div>
+        	
+	        <h:dataTable id = "result" value="#{ListBooks.books}" var="book"
+	        		styleClass="table"
+         			headerClass="tableHeader"
+         			rowClasses="tableOddRow,tableEvenRow">
+	      		<h:column>
+	      			<f:facet name="header">
+	      				<h:outputText value="#{msgs.bookColumnTitile}" />
+	      			</f:facet>
+	      			<h:outputText value="#{book.value0}" />
+	      		</h:column>
+	      		<h:column>
+	      			<f:facet name="header">
+	      				<h:outputText value="#{msgs.bookColumnDesc}" />
+	      			</f:facet>
+	      			<h:outputText value="#{book.value1}" />
+	      		</h:column>
+	      		<h:column>
+	      			<f:facet name="header">
+	      				<h:outputText value="#{msgs.bookColumnDate}" />
+	      			</f:facet>
+	      			<h:outputText value="#{book.value2}">
+	      				<f:convertDateTime pattern="yyyy" />
+	      			</h:outputText>
+	      		</h:column>
+	      		<h:column>
+	      			<f:facet name="header">
+	      				<h:outputText value="#{msgs.bookColumnAuthors}" />
+	      			</f:facet>
+	      			<ui:repeat value="#{book.value3}" var="item">
+					    <h:outputText value="#{item.value0} #{item.value1}" /><br/>
+					</ui:repeat>
+	      		</h:column>
+	      		<h:column>
+	      			<f:facet name="header">
+	      				<h:outputText value="#{msgs.authorColumnAction}" />
+	      			</f:facet>
+					<div id="act1">
+		      			<h:link outcome="addUpdateBook" value="#{msgs.updateBook}" 
+		      					rendered="#{Security.isUserAllowedAccess()}">
+							<f:param name="title" value="#{book.value0}" />
+							<f:param name="description" value="#{book.value1}" />
+							<f:param name="date" value="#{UrlConverter.convertDateToURL(book.value2)}" />
+							<f:param name="authors" value="#{UrlConverter.convertAuthorsToURL(book.value3)}"/>
+						</h:link>
+					</div>
+					<div id="act2">
+		      			<h:form>
+			      			<h:commandLink action = "#{ListBooks.removeBook(book)}" value="#{msgs.buttonRemove}"
+			      				rendered="#{Security.isUserAllowedAccess()}"/>
+		      			</h:form>
+	      			</div>
+	      		</h:column>
+	      	</h:dataTable>
+	      	
+        </ui:define>
+     </ui:composition>
+</html>
